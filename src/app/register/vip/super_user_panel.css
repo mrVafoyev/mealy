@@ -1,4 +1,4 @@
-.super_user_panel_container{
+.super_user_panel_container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,20 +6,22 @@
 
 }
 
-.super_user_panel_heading{
+.super_user_panel_heading {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: start;
     justify-content: space-between;
 }
-.super_user_panel_exit{
-width: 25px;
-height: 25px;
-float: left;
+
+.super_user_panel_exit {
+    width: 25px;
+    height: 25px;
+    float: left;
 
 }
-.super_user_label{
+
+.super_user_label {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -27,7 +29,7 @@ float: left;
     width: 100%;
 }
 
-.super_user_submit_form{
+.super_user_submit_form {
     width: 125px;
     background-color: blue;
     padding: 3px 25px;
@@ -35,7 +37,7 @@ float: left;
     font-size: 25px;
 
 }
-.super_user_panel_back_to_roles{
-font-size: medium;
-}
 
+.super_user_panel_back_to_roles {
+    font-size: medium;
+}

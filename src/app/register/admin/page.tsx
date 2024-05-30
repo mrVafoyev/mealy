@@ -2,8 +2,9 @@
 
 import React from "react";
 import "./admin_panel.css";
-import { handleCloseModal } from "../register_modals/actions";
-import { useDispatch, useSelector } from "react-redux";
+import Link from 'next/link'
+import { Button, Card, Input } from "@mui/material";
+
 interface PROPS{
     setOption:React.Dispatch<React.SetStateAction<number>>
 }
@@ -12,36 +13,39 @@ const AdminPanel = ({setOption}:PROPS) => {
 const handleGetAdmin=()=>{
 
 }
-	return (
-		<div className="admin_panel_container" id="admin_panel_container">
-			<form className="admin_panel_inner_container" id="admin_panel_inner_container">
-				<h1 className="admin_panel_heading">
-					<button className="admin_panel_back_to_roles" id="admin_panel_back_to_roles" onClick={() => setOption(0)}>
-						⬅️
-					</button>
-					Admin Panel{" "}
-					<button className="admin_panel_exit" id="admin_panel_exit" onClick={() => handleCloseModal()}>
+return (
+	<div className="admin_panel_container w-screen h-screen bg-gray-800 " id="admin_panel_container">
+		<Card className="flex w-2/6 bg-gray-400 h-3/7 p-8">
+			<form className="flex flex-col items-center justify-between ml-auto mr-auto h-72  w-4/5 gap-2" id="admin_panel_inner_container">
+				<h1 className="admin_panel_heading font-bold text-2xl">
+
+					Admin{" "}
+					<Link href="/" className="admin_panel_exit text-xl hover:bg-blue-800 text-white text-center w-fit" id="admin_panel_exit" >
 						X
-					</button>
+					</Link>
 				</h1>
+				<label className="admin_label" htmlFor="admin_first_name">
+					First Name:
+					<Input className=" w-full ml-auto mr-auto hover:bg-gray-200 text-black" required={true} id="admin_first_name" type="text" placeholder="admin first name" />
+				</label>
+
+				<label className="admin_label" htmlFor="admin_last_name">
+					Last name:
+					<Input className=" w-full ml-auto mr-auto hover:bg-gray-200 text-black" required={true} id="admin_last_name" type="text" placeholder="admin last name" />
+				</label>
+
 				<label className="admin_label" htmlFor="admin_password">
-					username:
-					<input className="admin_panel_inputs" required id="admin_password" type="text" placeholder="admin username" />
+					Password:
+					<Input className=" w-full ml-auto mr-auto hover:bg-gray-200 text-black" required={true} id="admin_password" type="password" placeholder="admin Password" />
 				</label>
-				<label className="admin_label" htmlFor="admin_firstname">
-					firstname:
-					<input className="admin_panel_inputs" required id="admin_firstname" type="text" placeholder="admin firstname" />
-				</label>
-				<label className="admin_label" htmlFor="admin_password">
-					password:
-					<input className="admin_panel_inputs" required id="admin_password" type="text" placeholder="admin password" />
-				</label>
-				<button className="admin_submit_form" id="admin_submit_form" onClick={()=>handleGetAdmin()}>
-					submit
-				</button>
+
+				<Button color="secondary" className="admin_submit_form" id="admin_submit_form">
+					SUBMIT
+				</Button>
 			</form>
-		</div>
-	);
+		</Card>
+	</div>
+);
 };
 
 export default AdminPanel;
